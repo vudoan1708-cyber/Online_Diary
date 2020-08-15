@@ -1,0 +1,38 @@
+﻿@page
+@model DailyDiary.Pages.DiaryContent.AddedContentModel
+
+@{
+    ViewData["Title"] = "Added Contents";
+}
+
+<br />
+
+<h2 class="text-info">@Model.AddedDiary.Title</h2>
+
+
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        <div class="row m-4">
+            <div class="col-12 imgUrl">
+                <img class="img-fluid" src="@Model.AddedDiary.ImageUrl" />
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <p>@Model.AddedDiary.Content</p>
+        </div>
+
+
+        @*Buttons*@
+        <div class="form-group row">
+            <div class="col-3 offset-2">
+                <a class="btn btn-primary form-control text-white" asp-page="Edit" asp-route-id="@Model.AddedDiary.ID">Edit</a>
+            </div>
+
+            <div class="col-3 offset-2">
+                <a class="btn btn-danger text-white form-control" asp-page="Index">Back to Diary</a>
+            </div>
+        </div>
+    </form>
+</div>
+
